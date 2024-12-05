@@ -42,4 +42,31 @@ class ProduitsApplicationTests {
 			System.out.println(p);
 		}
 	}
+	
+	@Test
+	public void testFindProduitByNom() {
+		List<Produit> prods = produitRepository.findByNomProduit("HP");
+		
+		for (Produit p : prods) {
+			System.out.println(p);
+		}
+	}
+	
+	@Test
+	public void testFindProduitByNomContains() {
+		List<Produit> prods = produitRepository.findByNomProduitContains("P");
+		
+		for (Produit p : prods) {
+			System.out.println(p);
+		}
+	}
+	
+	@Test
+	public void testFindProduitByNomPrix() {
+		List<Produit> prods = produitRepository.findByNomPrix("HP", 800.0);
+		
+		for (Produit p : prods) {
+			System.out.println(p);
+		}
+	}
 }
